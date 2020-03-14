@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9A2F2F92241D8452006F934E /* NotesIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A2F2F92241D8452006F934E /* Notes.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2F2F95241D8452006F934E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A2F2F97241D8452006F934E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9A2F2F9C241D8452006F934E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		9A2F2F93241D8452006F934E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A2F2F92241D8452006F934E /* NotesIO.app */,
+				9A2F2F92241D8452006F934E /* Notes.io.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 			);
 			name = Consolidation8;
 			productName = Consolidation8;
-			productReference = 9A2F2F92241D8452006F934E /* NotesIO.app */;
+			productReference = 9A2F2F92241D8452006F934E /* Notes.io.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -296,7 +296,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MattFree.Consolidation8;
-				PRODUCT_NAME = NotesIO;
+				PRODUCT_NAME = Notes.io;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -314,7 +314,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MattFree.Consolidation8;
-				PRODUCT_NAME = NotesIO;
+				PRODUCT_NAME = Notes.io;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
