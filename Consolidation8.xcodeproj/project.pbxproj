@@ -86,6 +86,8 @@
 			dependencies = (
 			);
 			name = Consolidation8;
+			packageProductDependencies = (
+			);
 			productName = Consolidation8;
 			productReference = 9A2F2F92241D8452006F934E /* Notes.io.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +116,8 @@
 				Base,
 			);
 			mainGroup = 9A2F2F89241D8452006F934E;
+			packageReferences = (
+			);
 			productRefGroup = 9A2F2F93241D8452006F934E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
