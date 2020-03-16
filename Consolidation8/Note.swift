@@ -11,4 +11,5 @@ import Foundation
 struct Note {
     var title: String
     var subtitle: String
+    var date: Date
 }

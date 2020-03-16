@@ -14,6 +14,8 @@
 		9A2F2FA2241D8455006F934E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F2FA0241D8455006F934E /* LaunchScreen.storyboard */; };
 		9A2F2FAA241D84AA006F934E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F2FA9241D84AA006F934E /* TableViewController.swift */; };
 		9A2F2FAC241D85BB006F934E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F2FAB241D85BB006F934E /* Note.swift */; };
+		9A2F2FB5241EB298006F934E /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F2FB4241EB298006F934E /* NoteCell.swift */; };
+		9A2F2FB9241EF9AF006F934E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F2FB8241EF9AF006F934E /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		9A2F2FA3241D8455006F934E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A2F2FA9241D84AA006F934E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9A2F2FAB241D85BB006F934E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		9A2F2FB4241EB298006F934E /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		9A2F2FB8241EF9AF006F934E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,9 @@
 				9A2F2F95241D8452006F934E /* AppDelegate.swift */,
 				9A2F2F97241D8452006F934E /* SceneDelegate.swift */,
 				9A2F2FA9241D84AA006F934E /* TableViewController.swift */,
+				9A2F2FB8241EF9AF006F934E /* DetailViewController.swift */,
 				9A2F2FAB241D85BB006F934E /* Note.swift */,
+				9A2F2FB4241EB298006F934E /* NoteCell.swift */,
 				9A2F2F9B241D8452006F934E /* Main.storyboard */,
 				9A2F2F9E241D8455006F934E /* Assets.xcassets */,
 				9A2F2FA0241D8455006F934E /* LaunchScreen.storyboard */,
@@ -147,6 +153,8 @@
 			files = (
 				9A2F2F96241D8452006F934E /* AppDelegate.swift in Sources */,
 				9A2F2FAA241D84AA006F934E /* TableViewController.swift in Sources */,
+				9A2F2FB5241EB298006F934E /* NoteCell.swift in Sources */,
+				9A2F2FB9241EF9AF006F934E /* DetailViewController.swift in Sources */,
 				9A2F2F98241D8452006F934E /* SceneDelegate.swift in Sources */,
 				9A2F2FAC241D85BB006F934E /* Note.swift in Sources */,
 			);
