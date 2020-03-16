@@ -25,6 +25,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOU-O9-039">
                                             <rect key="frame" x="20" y="0.0" width="374" height="24"/>
+                                            <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -56,6 +57,7 @@
                                         <constraint firstAttribute="bottom" secondItem="kK5-AM-xmf" secondAttribute="bottom" constant="3.5" id="vQF-Uk-rCU"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="kK5-AM-xmf" id="6AU-jv-ezd"/>
                                     <outlet property="noteLabel" destination="1g0-ji-UNN" id="caM-5w-cg2"/>

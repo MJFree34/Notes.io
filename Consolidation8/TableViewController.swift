@@ -17,6 +17,12 @@ class TableViewController: UITableViewController {
         
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let compose = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(newNote))
+        
+        toolbarItems = [spacer, compose]
+        navigationController?.isToolbarHidden = false
+        
         title = "Notes"
         
         loadNotes()
@@ -59,12 +65,13 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController {
-            vc.note = notes[indexPath.row]
-            vc.notes = notes
-            vc.noteIndex = indexPath.row
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        pushToDetail(indexPath: indexPath)
+    }
+    
+    @objc func newNote() {
+        let note = Note(title: "New Note", note: "Text here...", date: Date(timeIntervalSinceNow: 0))
+        notes.append(note)
+        pushToDetail(indexPath: IndexPath(row: notes.count - 1, section: 0))
     }
     
     func save() {
@@ -92,5 +99,14 @@ class TableViewController: UITableViewController {
         }
         
         tableView.reloadData()
+    }
+    
+    func pushToDetail(indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController {
+            vc.note = notes[indexPath.row]
+            vc.notes = notes
+            vc.noteIndex = indexPath.row
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
