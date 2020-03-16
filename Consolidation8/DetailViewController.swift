@@ -29,12 +29,12 @@ class DetailViewController: UIViewController {
         dateFormatter.locale = Locale(identifier: "en_US")
         dateFormatter.setLocalizedDateFormatFromTemplate("dd-MM-yy")
         dateLabel.text = dateFormatter.string(from: date)
-        
-        save()
     }
     
     func save() {
         let jsonEncoder = JSONEncoder()
+        
+        syncNote()
         
         if let savedData = try? jsonEncoder.encode(notes) {
             let defaults = UserDefaults.standard
@@ -44,14 +44,16 @@ class DetailViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillDisappear(_ animated: Bool) {
+        save()
     }
-    */
-
+    
+    func syncNote() {
+        note.note = noteArea.text
+        note.title = titleLabel.text!
+        
+        notes[noteIndex].note = note.note
+        notes[noteIndex].title = note.title
+        notes[noteIndex].date = note.date
+    }
 }

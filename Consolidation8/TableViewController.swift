@@ -15,23 +15,15 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Default iOS things
-        self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         title = "Notes"
         
-        let defaults = UserDefaults.standard
-        
-        if let savedNotes = defaults.object(forKey: "notes") as? Data {
-            let jsonDecoder = JSONDecoder()
-            
-            do {
-                notes = try jsonDecoder.decode([Note].self, from: savedNotes)
-            } catch {
-                print("failed to acquire savedNotes")
-            }
-        }
+        loadNotes()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadNotes()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,5 +76,21 @@ class TableViewController: UITableViewController {
         } else {
             print("Unable to save data")
         }
+    }
+    
+    func loadNotes() {
+        let defaults = UserDefaults.standard
+        
+        if let savedNotes = defaults.object(forKey: "notes") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                notes = try jsonDecoder.decode([Note].self, from: savedNotes)
+            } catch {
+                print("failed to acquire savedNotes")
+            }
+        }
+        
+        tableView.reloadData()
     }
 }
