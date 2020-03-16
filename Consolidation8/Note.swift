@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Note {
+struct Note: Codable {
     var title: String
-    var subtitle: String
+    var note: String
     var date: Date
 }

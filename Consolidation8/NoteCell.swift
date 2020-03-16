@@ -10,6 +10,6 @@ import UIKit
 
 class NoteCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var subtitleLabel: UILabel!
+    @IBOutlet var noteLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
 }

@@ -20,10 +20,18 @@ class TableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         title = "Notes"
-        let date = Date(timeIntervalSinceNow: 0)
-        print(date)
         
-        notes.append(Note(title: "Test Note", subtitle: "This is a super long test note to see if the notes will actually work on the screen.", date: Date(timeIntervalSinceNow: 0)))
+        let defaults = UserDefaults.standard
+        
+        if let savedNotes = defaults.object(forKey: "notes") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                notes = try jsonDecoder.decode([Note].self, from: savedNotes)
+            } catch {
+                print("failed to acquire savedNotes")
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,9 +42,11 @@ class TableViewController: UITableViewController {
         if editingStyle == .delete {
             notes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            save()
         } else if editingStyle == .insert {
-            notes.insert(Note(title: "New Note", subtitle: "Text here...", date: Date(timeIntervalSinceNow: 0)), at: indexPath.row)
+            notes.insert(Note(title: "New Note", note: "Text here...", date: Date(timeIntervalSinceNow: 0)), at: indexPath.row)
             tableView.insertRows(at: [indexPath], with: .fade)
+            save()
         }
     }
     
@@ -45,7 +55,7 @@ class TableViewController: UITableViewController {
             fatalError("Could not dequeue a NoteCell")
         }
         cell.titleLabel.text = notes[indexPath.row].title
-        cell.subtitleLabel.text = notes[indexPath.row].subtitle
+        cell.noteLabel.text = notes[indexPath.row].note
         
         let date = notes[indexPath.row].date
         let dateFormatter = DateFormatter()
@@ -57,6 +67,22 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController {
+            vc.note = notes[indexPath.row]
+            vc.notes = notes
+            vc.noteIndex = indexPath.row
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func save() {
+        let jsonEncoder = JSONEncoder()
         
+        if let savedData = try? jsonEncoder.encode(notes) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "notes")
+        } else {
+            print("Unable to save data")
+        }
     }
 }
